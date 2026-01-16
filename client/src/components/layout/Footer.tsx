@@ -1,4 +1,6 @@
 import { Link } from "wouter";
+import maltmanLogo from "@assets/Maltman_logo_1768592907683.png";
+import agencySymbol from "@assets/agency_symbol_logo_1768606850892.png";
 
 export function Footer() {
   return (
@@ -6,6 +8,18 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
+            <div className="flex items-center gap-4 mb-4">
+               <img 
+                 src={agencySymbol} 
+                 alt="The Agency Symbol" 
+                 className="h-8 w-auto invert brightness-0"
+               />
+               <img 
+                 src={maltmanLogo} 
+                 alt="Maltman Logo" 
+                 className="h-8 w-auto invert brightness-0"
+               />
+            </div>
             <div>
               <h3 className="font-serif text-2xl tracking-tighter text-white mb-2">Griffin Sweet</h3>
               <p className="text-xs uppercase tracking-widest opacity-60">The Agency Real Estate</p>
@@ -45,11 +59,6 @@ export function Footer() {
               <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
             <div className="pt-4 flex items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all">
-               <img 
-                 src="/attached_assets/Maltman_logo_1768592907683.png" 
-                 alt="Maltman Logo" 
-                 className="h-10 w-auto"
-               />
                <span className="border border-white/20 p-2 text-[10px] leading-tight inline-block text-white/60">
                  EQUAL HOUSING<br/>OPPORTUNITY
                </span>
