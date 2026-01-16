@@ -31,7 +31,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-4xl"
           >
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-6">
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-6 text-white">
               Elevating the Standard of<br />
               <span className="italic font-light opacity-90 text-white">Luxury Living</span>
             </h1>
