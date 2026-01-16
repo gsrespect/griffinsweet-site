@@ -31,10 +31,10 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="uppercase tracking-widest text-xs font-semibold text-white">Neighborhoods</h4>
             <ul className="space-y-3 text-sm text-gray-400 font-light">
-              <li><Link href="/neighborhoods" className="hover:text-white transition-colors">Silver Lake</Link></li>
-              <li><Link href="/neighborhoods" className="hover:text-white transition-colors">Los Feliz</Link></li>
-              <li><Link href="/neighborhoods" className="hover:text-white transition-colors">Studio City</Link></li>
+              <li><Link href="/neighborhoods" className="hover:text-white transition-colors">Mar Vista</Link></li>
               <li><Link href="/neighborhoods" className="hover:text-white transition-colors">Santa Monica</Link></li>
+              <li><Link href="/neighborhoods" className="hover:text-white transition-colors">Brentwood</Link></li>
+              <li><Link href="/neighborhoods" className="hover:text-white transition-colors">Pacific Palisades</Link></li>
             </ul>
           </div>
 

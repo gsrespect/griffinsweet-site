@@ -4,24 +4,9 @@ import { Link } from "wouter";
 
 const NEIGHBORHOODS = [
   { 
-    name: "Silver Lake", 
-    desc: "The creative heart of Eastside L.A.",
-    img: "https://images.unsplash.com/photo-1516137207436-a14cd51bd730?q=80&w=2070&auto=format&fit=crop" 
-  },
-  { 
-    name: "Los Feliz", 
-    desc: "Historic charm meets hillside luxury.",
-    img: "https://images.unsplash.com/photo-1444723121867-26b5d64e859c?q=80&w=2074&auto=format&fit=crop" 
-  },
-  { 
-    name: "Studio City", 
-    desc: "Valley convenience with upscale flair.",
-    img: "https://images.unsplash.com/photo-1588612502662-79354784a6a5?q=80&w=2070&auto=format&fit=crop" 
-  },
-  { 
-    name: "Sherman Oaks", 
-    desc: "Suburban comfort, city access.",
-    img: "https://images.unsplash.com/photo-1627916607164-7b9c910a9762?q=80&w=2070&auto=format&fit=crop" 
+    name: "Mar Vista", 
+    desc: "Community-oriented with modern flair.",
+    img: "https://images.unsplash.com/photo-1533256086774-703c152431fa?q=80&w=2070&auto=format&fit=crop" 
   },
   { 
     name: "Santa Monica", 
@@ -39,9 +24,19 @@ const NEIGHBORHOODS = [
     img: "https://images.unsplash.com/photo-1595521624992-48a59aef95e3?q=80&w=1974&auto=format&fit=crop" 
   },
   { 
-    name: "Venice", 
-    desc: "Bohemian spirit, modern edge.",
-    img: "https://images.unsplash.com/photo-1533256086774-703c152431fa?q=80&w=2070&auto=format&fit=crop" 
+    name: "Sherman Oaks", 
+    desc: "Suburban comfort, city access.",
+    img: "https://images.unsplash.com/photo-1627916607164-7b9c910a9762?q=80&w=2070&auto=format&fit=crop" 
+  },
+  { 
+    name: "Studio City", 
+    desc: "Valley convenience with upscale flair.",
+    img: "https://images.unsplash.com/photo-1588612502662-79354784a6a5?q=80&w=2070&auto=format&fit=crop" 
+  },
+  { 
+    name: "Silver Lake", 
+    desc: "The creative heart of Eastside L.A.",
+    img: "https://images.unsplash.com/photo-1516137207436-a14cd51bd730?q=80&w=2070&auto=format&fit=crop" 
   }
 ];
 

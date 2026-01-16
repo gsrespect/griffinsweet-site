@@ -36,7 +36,7 @@ export default function Home() {
               <span className="italic font-light opacity-90">Finest Living</span>
             </h1>
             <p className="text-lg md:text-xl font-light max-w-2xl mb-10 tracking-wide opacity-90">
-              Specializing in luxury properties across Silver Lake, Los Feliz, and the Westside. 
+              Specializing in luxury properties across Mar Vista, Santa Monica, Brentwood, and the Westside. 
               Elevating the standard of real estate representation.
             </p>
             
@@ -102,9 +102,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Silver Lake", img: "https://images.unsplash.com/photo-1516137207436-a14cd51bd730?q=80&w=2070&auto=format&fit=crop" },
-              { name: "Los Feliz", img: "https://images.unsplash.com/photo-1444723121867-26b5d64e859c?q=80&w=2074&auto=format&fit=crop" },
-              { name: "Santa Monica", img: "https://images.unsplash.com/photo-1456942004245-09556213459c?q=80&w=2071&auto=format&fit=crop" }
+              { name: "Mar Vista", img: "https://images.unsplash.com/photo-1533256086774-703c152431fa?q=80&w=2070&auto=format&fit=crop" },
+              { name: "Santa Monica", img: "https://images.unsplash.com/photo-1456942004245-09556213459c?q=80&w=2071&auto=format&fit=crop" },
+              { name: "Brentwood", img: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=2070&auto=format&fit=crop" }
             ].map((neighborhood, i) => (
               <Link key={neighborhood.name} href="/neighborhoods">
                 <div className="group relative aspect-[4/5] overflow-hidden cursor-pointer">
