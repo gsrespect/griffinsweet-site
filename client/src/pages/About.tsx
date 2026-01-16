@@ -26,17 +26,25 @@ export default function About() {
               Griffin's career has been shaped within The Agency's top-performing ranks, where he has worked alongside many of the firm's most accomplished agents on numerous significant transactions across Los Angeles. This hands-on exposure to high-value estates, new construction properties, and architecturally notable homes has given him a comprehensive understanding of pricing, presentation, and negotiation at the highest level.
             </p>
             <p>
-              Within The Agency, Griffin has earned multiple internal honors—including the All-Star Award and Rising Star Award—recognizing his professionalism, consistency, and continued upward momentum. He is ranked year over year in the top 1% of agents nationwide, underscoring his performance and standing within the industry.
+              Within The Agency, Griffin has earned multiple internal honors—including the All-Star Award and Rising Star Award—recognizing his professionalism, consistency, and continued upward momentum. He is ranked year over year in the top 1% of agents nationwide, underscoring his performance and standing within the industry. His work and expertise have also been featured in premier publications such as <span className="italic font-medium text-primary">The Wall Street Journal</span> and <span className="italic font-medium text-primary">Deadline Hollywood</span>.
             </p>
             
-            <div className="pt-8 grid grid-cols-2 gap-8 border-t border-border">
+            <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border">
               <div>
                 <h3 className="font-serif text-3xl text-primary mb-2">Top 1%</h3>
-                <p className="text-xs uppercase tracking-widest">Nationwide Ranking</p>
+                <p className="text-[10px] uppercase tracking-widest">Nationwide Ranking</p>
               </div>
               <div>
                 <h3 className="font-serif text-3xl text-primary mb-2">All-Star</h3>
-                <p className="text-xs uppercase tracking-widest">Award Winner</p>
+                <p className="text-[10px] uppercase tracking-widest">The Agency Award</p>
+              </div>
+              <div>
+                <h3 className="font-serif text-3xl text-primary mb-2">Rising Star</h3>
+                <p className="text-[10px] uppercase tracking-widest">The Agency Award</p>
+              </div>
+              <div>
+                <h3 className="font-serif text-xl text-primary mb-2">WSJ / Deadline</h3>
+                <p className="text-[10px] uppercase tracking-widest">Featured In</p>
               </div>
             </div>
           </div>

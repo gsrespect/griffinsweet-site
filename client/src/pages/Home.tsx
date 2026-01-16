@@ -32,12 +32,11 @@ export default function Home() {
             className="max-w-4xl"
           >
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-6">
-              Curating Los Angeles<br />
-              <span className="italic font-light opacity-90">Finest Living</span>
+              Elevating the Standard of<br />
+              <span className="italic font-light opacity-90 text-white">Luxury Living</span>
             </h1>
-            <p className="text-lg md:text-xl font-light max-w-2xl mb-10 tracking-wide opacity-90">
-              Specializing in luxury properties across Mar Vista, Santa Monica, Brentwood, and the Westside. 
-              Elevating the standard of real estate representation.
+            <p className="text-lg md:text-xl font-light max-w-2xl mb-10 tracking-wide opacity-90 text-white/90">
+              Unrivaled expertise and discrete representation for the most discerning clients in Los Angeles.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
