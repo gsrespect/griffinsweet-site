@@ -1,0 +1,92 @@
+You are building my production-ready real estate website.
+
+Brand / Agent info (use everywhere):
+- Name: Griffin Sweet
+- Brand format: “Griffin Sweet – The Agency Real Estate”
+- Brokerage line: “THEAGENCY – A Global Marketing and Sales Organization”
+- License: CA DRE 02078712
+- Phone: 310.339.1171
+- Email: Griffin.Sweet@TheAgencyRE.com
+
+GOALS (must achieve):
+1) Luxury, minimal, fast, mobile-first site (Luxury Presence vibe but not a clone).
+2) Capture leads everywhere (forms + clear CTAs) and route them into Follow Up Boss via Make webhook.
+3) Install my tracking pixel site-wide (WidgetBe/FUB tracker) and track pageviews on route changes.
+4) Add IDX home search using The MLS idxcellent iframe with a mobile fallback that opens full-screen.
+5) SEO friendly: proper titles/descriptions per page, OG tags, sitemap.xml, robots.txt, JSON-LD for RealEstateAgent.
+
+STACK (required):
+- Next.js App Router + TypeScript
+- Tailwind CSS
+- Clean component structure, no heavy dependencies.
+
+PAGES (required):
+- / (Home)
+- /about
+- /portfolio
+- /home-search (IDX)
+- /neighborhoods + these pages:
+  /neighborhoods/silver-lake
+  /neighborhoods/los-feliz
+  /neighborhoods/studio-city
+  /neighborhoods/sherman-oaks
+  /neighborhoods/santa-monica
+  /neighborhoods/brentwood
+  /neighborhoods/pacific-palisades
+  /neighborhoods/mar-vista
+  /neighborhoods/venice
+- /insights (blog index) + /insights/[slug] post template
+- /contact
+- /privacy
+- /terms
+
+NAV:
+Home, About, Portfolio, Home Search, Neighborhoods, Insights, Contact
+Header must include a right-side CTA button: “Schedule a Call” linking to /contact.
+
+PORTFOLIO REQUIREMENTS:
+- Create /data/transactions.json with 8 sample entries (placeholder data) using this schema:
+  id, address_display, city, zip, neighborhood, property_type, role, close_date, close_price, beds, baths, sqft, notes, photo_url (optional), external_url (optional)
+- /portfolio renders a grid from that JSON, filterable by neighborhood and role (lightweight).
+- Include a button: “View Full Portfolio on The Agency” linking to:
+  https://www.theagencyre.com/agent/griffin-sweet
+
+IDX REQUIREMENTS (use exactly these URLs and settings):
+- Add the MLS script:
+  https://www.themls.com/IDXNET/Scripts/idxwidget.js
+- Add the iframe with:
+  id="idxFrame"
+  src="https://www.themls.com/IDXNET/Default.aspx?wid=b01Wje8lbgFKViKluuKgwPaRPXrW75VUeI0PW5ZawIsnJdPzvX6HugEQLEQL"
+  Desktop: centered, max width 1024, height 900, scrolling="no", border 0, transparent background.
+  Mobile (below 900px width): DO NOT embed; show a button “Open Home Search” that opens the iframe src in a new tab.
+
+TRACKING REQUIREMENTS (WidgetBe/FUB tracker):
+- Install this tracker site-wide. It must load after the page becomes interactive.
+- It must send "pageview" on initial load and on Next.js route changes:
+
+(function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"),(t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i;e.parentNode.insertBefore(t,e);})
+(window,"https://widgetbe.com/agent",document,"widgetTracker");
+window.widgetTracker("create", "WT-FFQUWKYJ");
+window.widgetTracker("send", "pageview");
+
+LEAD CAPTURE REQUIREMENTS:
+- Add lead forms on: Home (hero), Contact page, and below the IDX embed (desktop).
+- Form fields: full_name, email, phone, intent (Buyer/Seller/Not sure), timeline, message.
+- Include a required consent checkbox:
+  “By submitting, you agree to receive calls/texts/emails from Griffin Sweet. Reply STOP to opt out.”
+- On submit, POST JSON to /api/lead with extra hidden fields:
+  pageUrl, referrer, utm_source, utm_medium, utm_campaign, utm_term, utm_content
+- Create the API route /api/lead that forwards the payload to a Make webhook:
+  process.env.MAKE_WEBHOOK_URL
+- If MAKE_WEBHOOK_URL is missing, the API must return a clear error.
+
+DELIVERABLES:
+- Full working code.
+- README.md that explains:
+  1) Run locally
+  2) Deploy to Vercel
+  3) Connect GoDaddy domain
+  4) Where to edit transactions.json
+  5) Where to set MAKE_WEBHOOK_URL
+  6) Where the MLS embed lives
+Now build the site.
