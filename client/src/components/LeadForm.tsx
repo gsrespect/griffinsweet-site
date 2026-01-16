@@ -149,20 +149,25 @@ export function LeadForm({ className }: { className?: string }) {
           control={form.control}
           name="consent"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-muted/20">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel className="font-normal text-[10px] leading-relaxed text-muted-foreground">
-                  I agree to be contacted by Griffin Sweet – The Agency Real Estate via call, email, and text for real estate services. To opt out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. <Link href="/privacy" className="underline underline-offset-2 hover:text-primary">View Privacy Policy</Link>.
-                </FormLabel>
-                <FormMessage />
+            <div className="space-y-3">
+              <div className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-muted/20">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel className="font-normal text-[10px] leading-relaxed text-muted-foreground">
+                    I agree to be contacted by <span className="font-medium text-primary">Griffin Sweet – The Agency Real Estate</span> via call, email, and text for real estate services. To opt out, you can reply <span className="font-medium">STOP</span> at any time or reply <span className="font-medium">HELP</span> for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. <Link href="/privacy" className="underline underline-offset-2 hover:text-primary">View Privacy Policy</Link>.
+                  </FormLabel>
+                </div>
               </div>
-            </FormItem>
+              <p className="text-[10px] text-muted-foreground italic px-1">
+                You can submit this form without agreeing to text messages.
+              </p>
+              <FormMessage />
+            </div>
           )}
         />
 

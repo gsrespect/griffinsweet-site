@@ -18,7 +18,7 @@ export const leads = pgTable("leads", {
   utmCampaign: text("utm_campaign"),
   utmTerm: text("utm_term"),
   utmContent: text("utm_content"),
-  consent: boolean("consent").notNull(), // Must be true
+  consent: boolean("consent").notNull().default(false), // Optional opt-in
   processedToWebhook: boolean("processed_to_webhook").default(false),
   createdAt: timestamp("created_at").defaultNow(),
 });
@@ -27,10 +27,6 @@ export const insertLeadSchema = createInsertSchema(leads).omit({
   id: true,
   createdAt: true,
   processedToWebhook: true
-}).extend({
-  consent: z.literal(true, {
-    errorMap: () => ({ message: "You must agree to the terms to continue." })
-  })
 });
 
 export type Lead = typeof leads.$inferSelect;

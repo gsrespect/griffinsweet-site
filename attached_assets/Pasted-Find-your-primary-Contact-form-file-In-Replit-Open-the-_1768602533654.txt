@@ -1,0 +1,98 @@
+Find your primary Contact form file
+In Replit:
+
+Open the file tree.
+
+Look for one of these (most common):
+
+app/contact/page.tsx
+
+app/contact/ContactForm.tsx
+
+components/ContactForm.tsx
+
+src/components/ContactForm.tsx
+
+Paste the opt-in checkbox block into the form UI (not the whole component unless needed)
+
+Keep your existing fields.
+
+Add ONLY the checkbox section + make sure phone is optional.
+
+Paste this block right above your Submit button:
+
+import Link from "next/link";
+
+const BUSINESS_NAME = "Griffin Sweet – The Agency Real Estate"; // or your legal entity
+
+// ...inside your form JSX, before the submit button:
+
+<div className="flex items-start gap-3">
+  <input
+    id="sms_opt_in"
+    name="sms_opt_in"
+    type="checkbox"
+    className="mt-1"
+    checked={form.sms_opt_in}
+    onChange={onChange}
+  />
+  <label htmlFor="sms_opt_in" className="text-sm leading-5">
+    I agree to be contacted by <span className="font-medium">{BUSINESS_NAME}</span> via call, email,
+    and text for real estate services. To opt out, reply <span className="font-medium">STOP</span> at
+    any time. For help, reply <span className="font-medium">HELP</span>. Message and data rates may
+    apply. Message frequency varies. See{" "}
+    <Link className="underline" href="/privacy">
+      Privacy Policy
+    </Link>
+    .
+  </label>
+</div>
+
+<p className="text-xs text-neutral-600">
+  You can submit this form without agreeing to text messages.
+</p>
+
+
+Ensure your form state includes the boolean
+In the same file, make sure your form state includes:
+
+sms_opt_in: false
+
+
+Example (wherever your form state is defined):
+
+const [form, setForm] = useState({
+  full_name: "",
+  email: "",
+  phone: "",
+  message: "",
+  sms_opt_in: false,
+});
+
+
+Ensure your onChange supports checkboxes
+Make sure your change handler handles checked for checkboxes:
+
+function onChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+  const { name, value, type } = e.target;
+  const checked = (e.target as HTMLInputElement).checked;
+  setForm((p) => ({ ...p, [name]: type === "checkbox" ? checked : value }));
+}
+
+
+Make phone optional
+
+Your phone <input> must NOT be required.
+
+Your checkbox must NOT be required.
+
+Confirm /privacy exists and is linked
+
+Ensure you have a page at app/privacy/page.tsx (or equivalent).
+
+If it doesn’t exist, create it and add a simple privacy policy.
+
+Make sure your submit payload includes sms_opt_in
+Where you build the JSON you POST to /api/lead, include sms_opt_in and phone.
+
+If you paste the code of your current contact form file (just the form component), I’ll point to the exact lines to edit and what to paste where, so you don’t accidentally duplicate imports or break state handling.
