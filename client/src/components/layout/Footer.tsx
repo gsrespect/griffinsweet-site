@@ -44,9 +44,15 @@ export function Footer() {
               <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
-            <div className="pt-4 opacity-50">
-               {/* Placeholder for Equal Housing Logo */}
-               <span className="border border-white/20 p-2 text-xs inline-block">EHO</span>
+            <div className="pt-4 flex items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all">
+               <img 
+                 src="/attached_assets/Maltman_logo_1768592907683.png" 
+                 alt="Maltman Logo" 
+                 className="h-10 w-auto"
+               />
+               <span className="border border-white/20 p-2 text-[10px] leading-tight inline-block text-white/60">
+                 EQUAL HOUSING<br/>OPPORTUNITY
+               </span>
             </div>
           </div>
         </div>

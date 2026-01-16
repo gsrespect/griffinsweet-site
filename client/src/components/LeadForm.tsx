@@ -3,13 +3,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { insertLeadSchema, type InsertLead } from "@shared/schema";
 import { useCreateLead } from "@/hooks/use-lead";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, FormDescription } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Loader2 } from "lucide-react";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 
 export function LeadForm({ className }: { className?: string }) {
   const [location] = useLocation();
@@ -27,7 +27,6 @@ export function LeadForm({ className }: { className?: string }) {
       consent: false,
       pageUrl: window.location.href,
       referrer: document.referrer || "",
-      // In a real app, parse URLSearchParams here for UTMs
     },
   });
 
@@ -158,8 +157,8 @@ export function LeadForm({ className }: { className?: string }) {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel className="font-normal text-xs text-muted-foreground">
-                  By submitting, you agree to receive calls, texts, and emails from Griffin Sweet. Reply STOP to opt out at any time.
+                <FormLabel className="font-normal text-[10px] leading-relaxed text-muted-foreground">
+                  I agree to be contacted by Griffin Sweet – The Agency Real Estate via call, email, and text for real estate services. To opt out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. <Link href="/privacy" className="underline underline-offset-2 hover:text-primary">View Privacy Policy</Link>.
                 </FormLabel>
                 <FormMessage />
               </div>
