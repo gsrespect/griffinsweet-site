@@ -4,6 +4,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import griffinHeadshot from "@assets/leather_1_final_1768527704532.jpeg";
 
 export default function Home() {
   return (
@@ -61,10 +62,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              {/* unsplash: handsome professional man in suit portrait real estate agent */}
-              <div className="aspect-[3/4] overflow-hidden bg-gray-100">
+              <div className="aspect-[3/4] overflow-hidden bg-gray-100 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" 
+                  src={griffinHeadshot} 
                   alt="Griffin Sweet" 
                   className="w-full h-full object-cover"
                 />
@@ -81,10 +81,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-serif">Griffin Sweet</h2>
               <div className="w-20 h-px bg-primary/20" />
               <p className="text-lg font-light text-muted-foreground leading-relaxed">
-                As a premier agent with The Agency, Griffin brings a unique blend of market expertise 
-                and design sensibility to every transaction. Whether you are buying your first home 
-                in Silver Lake or selling a luxury estate in Pacific Palisades, Griffin provides 
-                white-glove service tailored to your lifestyle.
+                As a premier agent with The Agency and a lifelong Angeleno, Griffin brings meaningful insight into the city's diverse neighborhoods—from beach communities to the canyons and hillside estates. Ranked in the top 1% of agents nationwide, his style blends precision, calm confidence, and a tailored client-first approach.
               </p>
               <Link href="/about" className="group inline-flex items-center text-primary uppercase tracking-widest text-sm border-b border-primary/20 pb-1 hover:border-primary transition-all">
                 Read Full Bio
